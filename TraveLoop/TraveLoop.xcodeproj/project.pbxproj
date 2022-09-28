@@ -39,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030E42C328E45E6C00D155ED /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				037CB24F28E447B900172AF3 /* HomeViewController.swift */,
+			);
+			path = HomeModule;
+			sourceTree = "<group>";
+		};
 		0315B2FF28E449D100A0759B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,9 +85,9 @@
 		037CB24A28E447B900172AF3 /* TraveLoop */ = {
 			isa = PBXGroup;
 			children = (
+				030E42C328E45E6C00D155ED /* HomeModule */,
 				0315B30028E449F500A0759B /* Helpers */,
 				0315B2FF28E449D100A0759B /* Resources */,
-				037CB24F28E447B900172AF3 /* HomeViewController.swift */,
 				037CB25128E447B900172AF3 /* Main.storyboard */,
 				037CB25428E447B900172AF3 /* TraveLoop.xcdatamodeld */,
 			);
@@ -113,6 +121,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					Home,
+				);
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {

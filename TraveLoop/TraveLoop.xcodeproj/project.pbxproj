@@ -14,6 +14,8 @@
 		037CB25628E447B900172AF3 /* TraveLoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 037CB25428E447B900172AF3 /* TraveLoop.xcdatamodeld */; };
 		037CB25828E447BE00172AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037CB25728E447BE00172AF3 /* Assets.xcassets */; };
 		037CB25B28E447BE00172AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037CB25928E447BE00172AF3 /* LaunchScreen.storyboard */; };
+		0389605328E4797B00A0CE2E /* ArticlesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389605128E4797B00A0CE2E /* ArticlesCollectionViewCell.swift */; };
+		0389605428E4797B00A0CE2E /* ArticlesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0389605228E4797B00A0CE2E /* ArticlesCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		037CB25728E447BE00172AF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		037CB25A28E447BE00172AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		037CB25C28E447BE00172AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0389605128E4797B00A0CE2E /* ArticlesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCollectionViewCell.swift; sourceTree = "<group>"; };
+		0389605228E4797B00A0CE2E /* ArticlesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlesCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		030E42C528E45EDC00D155ED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0389605028E4792300A0CE2E /* Cell */,
 				037CB24F28E447B900172AF3 /* HomeViewController.swift */,
 			);
 			path = View;
@@ -116,6 +121,15 @@
 				037CB25C28E447BE00172AF3 /* Info.plist */,
 			);
 			path = TraveLoop;
+			sourceTree = "<group>";
+		};
+		0389605028E4792300A0CE2E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0389605128E4797B00A0CE2E /* ArticlesCollectionViewCell.swift */,
+				0389605228E4797B00A0CE2E /* ArticlesCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037CB25B28E447BE00172AF3 /* LaunchScreen.storyboard in Resources */,
+				0389605428E4797B00A0CE2E /* ArticlesCollectionViewCell.xib in Resources */,
 				037CB25828E447BE00172AF3 /* Assets.xcassets in Resources */,
 				037CB25328E447B900172AF3 /* Main.storyboard in Resources */,
 			);
@@ -194,6 +209,7 @@
 			files = (
 				037CB25028E447B900172AF3 /* HomeViewController.swift in Sources */,
 				037CB24C28E447B900172AF3 /* AppDelegate.swift in Sources */,
+				0389605328E4797B00A0CE2E /* ArticlesCollectionViewCell.swift in Sources */,
 				037CB25628E447B900172AF3 /* TraveLoop.xcdatamodeld in Sources */,
 				037CB24E28E447B900172AF3 /* SceneDelegate.swift in Sources */,
 			);

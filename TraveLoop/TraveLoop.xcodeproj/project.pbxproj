@@ -42,9 +42,33 @@
 		030E42C328E45E6C00D155ED /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
-				037CB24F28E447B900172AF3 /* HomeViewController.swift */,
+				030E42C628E45EE200D155ED /* Model */,
+				030E42C528E45EDC00D155ED /* View */,
+				030E42C428E45ECE00D155ED /* VewModel */,
 			);
 			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		030E42C428E45ECE00D155ED /* VewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VewModel;
+			sourceTree = "<group>";
+		};
+		030E42C528E45EDC00D155ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				037CB24F28E447B900172AF3 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		030E42C628E45EE200D155ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0315B2FF28E449D100A0759B /* Resources */ = {
@@ -52,7 +76,6 @@
 			children = (
 				037CB25928E447BE00172AF3 /* LaunchScreen.storyboard */,
 				037CB25728E447BE00172AF3 /* Assets.xcassets */,
-				037CB25C28E447BE00172AF3 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -90,6 +113,7 @@
 				0315B2FF28E449D100A0759B /* Resources */,
 				037CB25128E447B900172AF3 /* Main.storyboard */,
 				037CB25428E447B900172AF3 /* TraveLoop.xcdatamodeld */,
+				037CB25C28E447BE00172AF3 /* Info.plist */,
 			);
 			path = TraveLoop;
 			sourceTree = "<group>";

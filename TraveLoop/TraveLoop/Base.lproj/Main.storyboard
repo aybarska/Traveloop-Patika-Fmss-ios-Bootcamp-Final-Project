@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--home-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="TraveLoop" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,13 +18,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="home" id="spM-j9-1qt"/>
+                    <tabBarItem key="tabBarItem" title="" image="HomeUnfill" selectedImage="HomeFill" id="spM-j9-1qt">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1194" y="-542"/>
         </scene>
-        <!--Search-->
+        <!--View Controller-->
         <scene sceneID="mCR-KR-o5t">
             <objects>
                 <viewController id="ohp-BH-wDL" sceneMemberID="viewController">
@@ -34,13 +36,13 @@
                         <viewLayoutGuide key="safeArea" id="CW4-oR-3sY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="jAv-Hh-KTY"/>
+                    <tabBarItem key="tabBarItem" title="" image="SearchUnfill" selectedImage="SearchFill" id="jAv-Hh-KTY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC5-2d-FyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1194" y="124"/>
         </scene>
-        <!--Bookmarks-->
+        <!--View Controller-->
         <scene sceneID="N6J-KI-pUV">
             <objects>
                 <viewController id="cf1-Dx-mtb" sceneMemberID="viewController">
@@ -50,7 +52,7 @@
                         <viewLayoutGuide key="safeArea" id="ei9-bk-Tz0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bookmarks" id="Paf-CA-n9R"/>
+                    <tabBarItem key="tabBarItem" title="" image="BookmarksUnfill" id="Paf-CA-n9R"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2KN-44-NKZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,10 +63,13 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sNv-aS-BsV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NCE-sb-EKF">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="TabbarSelection" id="NCE-sb-EKF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Wxl-zD-Vm1"/>
@@ -78,6 +83,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BookmarksUnfill" width="24" height="24"/>
+        <image name="HomeFill" width="24" height="24"/>
+        <image name="HomeUnfill" width="24" height="24"/>
+        <image name="SearchFill" width="24" height="24"/>
+        <image name="SearchUnfill" width="24" height="24"/>
+        <image name="TabbarSelection" width="68" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

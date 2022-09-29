@@ -13,6 +13,7 @@ class ArticlesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelTag: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    static let identifier = "ArticlesCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()

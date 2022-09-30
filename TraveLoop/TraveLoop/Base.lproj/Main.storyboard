@@ -145,6 +145,9 @@
                             <constraint firstItem="bpg-ep-6sT" firstAttribute="top" secondItem="ebQ-Pd-2JD" secondAttribute="top" id="a8j-aR-mA0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="bpg-ep-6sT" id="dna-ex-Iy3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxE-Jt-myE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

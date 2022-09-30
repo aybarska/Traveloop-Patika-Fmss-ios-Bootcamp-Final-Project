@@ -110,14 +110,13 @@ extension HomeViewController: UICollectionViewDelegate {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(items.count)
+        //print(items.count)
         return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticlesCollectionViewCell", for: indexPath) as! ArticlesCollectionViewCell
         let item = items[indexPath.row]
-        print(item.title!)
         cell.labelTag.text = "Travel"
         cell.labelTitle.text = item.title
             //KF.url(URL(string: item.url ?? "https://i.ibb.co/mtdQq8t/1.jpg"))

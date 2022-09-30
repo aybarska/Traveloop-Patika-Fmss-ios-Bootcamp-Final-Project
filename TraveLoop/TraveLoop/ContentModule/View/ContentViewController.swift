@@ -9,10 +9,17 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
- var moduleMethod = ""
+    @IBOutlet weak var tableView: UITableView!
+    private let viewModel = ContentViewModel()
+    
+    private var items: [HotelCellViewModel] = []
+    var moduleMethod = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(moduleMethod)
+        //print(moduleMethod)
+        viewModel.viewDelegate = self
+        viewModel.didViewLoad()
         makeUI()
     }
     
@@ -21,13 +28,67 @@ class ContentViewController: UIViewController {
 
 private extension ContentViewController {
     func makeUI() {
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Source Sans Pro", size: 30)!], for: .normal)
         bgColor()
+        tableView.delegate = self
+        tableView.dataSource = self
+        //AYB register cell yapilacak
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Source Sans Pro", size: 30)!], for: .normal)
+
     }
     
     func bgColor() {
         self.view.backgroundColor = UIColor(red: 0.9765, green: 0.9765, blue: 0.9765, alpha: 1.0)
-        //collectionView.backgroundColor = UIColor(red: 0.9765, green: 0.9765, blue: 0.9765, alpha: 1.0)
+        tableView.backgroundColor = UIColor(red: 0.9765, green: 0.9765, blue: 0.9765, alpha: 1.0)
     }
 }
+
+extension ContentViewController: ContentViewModelViewProtocol {
+    
+    func didCellItemFetch(_ items: [HotelCellViewModel]) {
+        self.items = items
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func showEmptyView() {
+        // has to be in main
+        DispatchQueue.main.async {
+        //let noDataImageView = UIImageView(image: UIImage(named: "noData2"))
+           // noDataImageView.contentMode = .scaleAspectFit
+        //self.tableView.backgroundView = noDataImageView
+        }
+    }
+    
+    func hideEmptyView() {
+    
+    }
+    
+}
+
+extension ContentViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didClickItem(at: indexPath.row)
+        
+    }
+}
+
+extension ContentViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "PostsTableViewCell") as! PostsTableViewCell
+//        cell.postTitleLabel.text = items[indexPath.row].title
+//        cell.postDescriptionLabel.text = items[indexPath.row].description
+//        return cell
+        //AYB after register your custom cell check this code
+    }
+    
+}
+
+
 

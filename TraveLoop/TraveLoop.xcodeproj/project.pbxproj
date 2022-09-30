@@ -12,6 +12,8 @@
 		03456D5E28E704B7001E6568 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03456D5D28E704B7001E6568 /* SourceSansPro-Bold.ttf */; };
 		03456D6028E71AA2001E6568 /* HotelsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456D5F28E71AA2001E6568 /* HotelsEntity.swift */; };
 		03456D6228E71AF6001E6568 /* HotelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456D6128E71AF6001E6568 /* HotelsModel.swift */; };
+		035F26BF28E76D6F00F0A9FD /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F26BD28E76D6F00F0A9FD /* ContentTableViewCell.swift */; };
+		035F26C028E76D6F00F0A9FD /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035F26BE28E76D6F00F0A9FD /* ContentTableViewCell.xib */; };
 		037CB24C28E447B900172AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CB24B28E447B900172AF3 /* AppDelegate.swift */; };
 		037CB24E28E447B900172AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CB24D28E447B900172AF3 /* SceneDelegate.swift */; };
 		037CB25028E447B900172AF3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CB24F28E447B900172AF3 /* HomeViewController.swift */; };
@@ -32,6 +34,8 @@
 		03456D5D28E704B7001E6568 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Bold.ttf"; path = "../../../../../../../../../Downloads/Source_Sans_Pro/SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		03456D5F28E71AA2001E6568 /* HotelsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsEntity.swift; sourceTree = "<group>"; };
 		03456D6128E71AF6001E6568 /* HotelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsModel.swift; sourceTree = "<group>"; };
+		035F26BD28E76D6F00F0A9FD /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
+		035F26BE28E76D6F00F0A9FD /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
 		037CB24828E447B900172AF3 /* TraveLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraveLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037CB24B28E447B900172AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		037CB24D28E447B900172AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		03456D5B28E6FB78001E6568 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				035F26BC28E76D3700F0A9FD /* Cell */,
 				03456D5528E6FB3B001E6568 /* ContentViewController.swift */,
 			);
 			path = View;
@@ -154,6 +159,15 @@
 				03456D5D28E704B7001E6568 /* SourceSansPro-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		035F26BC28E76D3700F0A9FD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				035F26BD28E76D6F00F0A9FD /* ContentTableViewCell.swift */,
+				035F26BE28E76D6F00F0A9FD /* ContentTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		037CB23F28E447B900172AF3 = {
@@ -260,6 +274,7 @@
 				037CB25B28E447BE00172AF3 /* LaunchScreen.storyboard in Resources */,
 				0389605428E4797B00A0CE2E /* ArticlesCollectionViewCell.xib in Resources */,
 				03456D5E28E704B7001E6568 /* SourceSansPro-Bold.ttf in Resources */,
+				035F26C028E76D6F00F0A9FD /* ContentTableViewCell.xib in Resources */,
 				037CB25828E447BE00172AF3 /* Assets.xcassets in Resources */,
 				037CB25328E447B900172AF3 /* Main.storyboard in Resources */,
 			);
@@ -276,6 +291,7 @@
 				037CB25028E447B900172AF3 /* HomeViewController.swift in Sources */,
 				03CC6E4828E5879400D71133 /* ArticlesModel.swift in Sources */,
 				03456D6028E71AA2001E6568 /* HotelsEntity.swift in Sources */,
+				035F26BF28E76D6F00F0A9FD /* ContentTableViewCell.swift in Sources */,
 				03F957E228E57F1600F5A20A /* HomeViewModel.swift in Sources */,
 				037CB24C28E447B900172AF3 /* AppDelegate.swift in Sources */,
 				03456D5828E6FB55001E6568 /* ContentViewModel.swift in Sources */,

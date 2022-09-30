@@ -40,7 +40,7 @@ private extension ContentViewModel {
     func makeViewBasedModel(_ hotels: [Hotel]) -> [HotelCellViewModel] {
         //make data usabe for view
         //AYB Check this map function
-        return hotels.map { .init(hotelNameTrans: $0.result.hotelName, address: $0.result.address, mainPhotoURL: $0.result.mainPhotoURL) }
+        return hotels.map { .init(hotelNameTrans: $0.result.hotelNameTrans, address: $0.result.address, mainPhotoURL: $0.result.mainPhotoURL) }
         
     }
 }

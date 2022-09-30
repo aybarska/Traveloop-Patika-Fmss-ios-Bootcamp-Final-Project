@@ -31,10 +31,14 @@ private extension ContentViewController {
         bgColor()
         tableView.delegate = self
         tableView.dataSource = self
-        //AYB register cell yapilacak
+        registerCell()
         self.navigationController?.navigationBar.topItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Source Sans Pro", size: 30)!], for: .normal)
-
     }
+    
+    func registerCell() {
+        tableView.register(.init(nibName: "ContentTableViewCell", bundle: nil), forCellReuseIdentifier: "ContentTableViewCell")
+    }
+
     
     func bgColor() {
         self.view.backgroundColor = UIColor(red: 0.9765, green: 0.9765, blue: 0.9765, alpha: 1.0)
@@ -54,9 +58,9 @@ extension ContentViewController: ContentViewModelViewProtocol {
     func showEmptyView() {
         // has to be in main
         DispatchQueue.main.async {
-        //let noDataImageView = UIImageView(image: UIImage(named: "noData2"))
-           // noDataImageView.contentMode = .scaleAspectFit
-        //self.tableView.backgroundView = noDataImageView
+//        let noDataImageView = UIImageView(image: UIImage(named: "noData2"))
+//            noDataImageView.contentMode = .scaleAspectFit
+//        self.tableView.backgroundView = noDataImageView
         }
     }
     
@@ -81,11 +85,11 @@ extension ContentViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "PostsTableViewCell") as! PostsTableViewCell
-//        cell.postTitleLabel.text = items[indexPath.row].title
-//        cell.postDescriptionLabel.text = items[indexPath.row].description
-//        return cell
-        //AYB after register your custom cell check this code
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell") as! ContentTableViewCell
+        cell.titleLabel.text = items[indexPath.row].hotelNameTrans
+        cell.descriptionLabel.text = items[indexPath.row].address
+        cell.imageUrl = items[indexPath.row].mainPhotoURL ?? ""
+        return cell
     }
     
 }

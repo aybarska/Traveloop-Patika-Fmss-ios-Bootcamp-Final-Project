@@ -17,7 +17,7 @@ class ArticlesModel {
     
     func fetchData() {
         
-        guard let url = URL.init(string: "https://newsdata.io/api/1/news?apikey=pub_11787fce0654c6f57c678731530d77f40d016&q=tourism") else {
+        guard let url = URL.init(string: "https://jsonplaceholder.typicode.com/posts") else {
             delegate?.didDataFetchProcessFinish(false)
             return
         }
@@ -34,7 +34,7 @@ class ArticlesModel {
                 return
             }
             
-            guard let data = data else {
+               guard let data = data else {
                 self?.delegate?.didDataFetchProcessFinish(false)
                 return
             }

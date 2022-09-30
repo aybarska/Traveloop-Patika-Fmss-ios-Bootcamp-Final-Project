@@ -9,7 +9,6 @@ import Foundation
 
 protocol HomeViewModelViewProtocol:AnyObject {
     func didCellItemFetch(_ items: [ArticlesCellViewModel])
-    
 }
 
 class HomeViewModel {
@@ -34,7 +33,8 @@ class HomeViewModel {
 
 private extension HomeViewModel {
     func makeViewBasedModel(_ articles: [Article]) -> [ArticlesCellViewModel] {
-        return articles.map{.init(title: $0.title, description: $0.description, image_url: $0.image_url)}
+        //veri var
+        return articles.map{.init(title: $0.title, description: $0.body)}
     }
 }
 
@@ -45,11 +45,11 @@ extension HomeViewModel: ArticlesModelProtocol {
             let items = makeViewBasedModel(articles)
             viewDelegate?.didCellItemFetch(items)
             //hide empty view
-            print(items)
+            //print(items) //veri var
 
         } else {
             print("basarisiz")
-
+            
         //show empty view
         }
     }

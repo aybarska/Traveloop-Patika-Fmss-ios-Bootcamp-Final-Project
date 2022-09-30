@@ -8,14 +8,13 @@
 import Foundation
 
 struct ArticlesCellViewModel {
-    
     var title: String?
     var description: String?
-    var image_url: String?
 }
 
 struct Article: Decodable {
+    var userId: Int
+    var id: Int
     var title: String
-    var description: String
-    var image_url: String
+    var body: String
 }

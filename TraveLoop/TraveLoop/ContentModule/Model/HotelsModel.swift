@@ -12,7 +12,8 @@ protocol HotelsModelProtocol:AnyObject {
 
 class HotelsModel {
     weak var delegate: HotelsModelProtocol?
-    var hotels: [Hotel] = []
+    var hotels: [Result] = []
+    //var hotels: Hotel = Any
     
     func fetchData() {
         let headers = [
@@ -46,9 +47,11 @@ class HotelsModel {
             
             do {
                 let jsonDecoder = JSONDecoder()
-                self?.hotels = try jsonDecoder.decode([Hotel].self, from: data)
+                let hotelsData = try jsonDecoder.decode(Hotel.self, from: data)
+                self?.hotels = hotelsData.result
                 self?.delegate?.didDataFetchProcessFinish(true)
             } catch {
+                print(error)
                 self?.delegate?.didDataFetchProcessFinish(false)
             }
 

@@ -33,6 +33,7 @@ private extension ContentViewController {
         tableView.dataSource = self
         registerCell()
         self.navigationController?.navigationBar.topItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Source Sans Pro", size: 30)!], for: .normal)
+        
     }
     
     func registerCell() {
@@ -86,9 +87,11 @@ extension ContentViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell") as! ContentTableViewCell
-        cell.titleLabel.text = items[indexPath.row].hotelNameTrans
+     
+        cell.titleLabel.text = items[indexPath.row].hotelName
         cell.descriptionLabel.text = items[indexPath.row].address
         cell.imageUrl = items[indexPath.row].mainPhotoURL ?? ""
+        
         return cell
     }
     

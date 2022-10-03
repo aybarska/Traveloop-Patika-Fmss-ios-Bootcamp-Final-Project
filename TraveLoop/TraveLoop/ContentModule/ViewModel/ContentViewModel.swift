@@ -37,11 +37,14 @@ class ContentViewModel {
 
 private extension ContentViewModel {
     @discardableResult
-    func makeViewBasedModel(_ hotels: [Hotel]) -> [HotelCellViewModel] {
+    func makeViewBasedModel(_ hotels: [Result]) -> [HotelCellViewModel] {
         //make data usabe for view
         //AYB Check this map function
-        return hotels.map { .init(hotelNameTrans: $0.result.hotelNameTrans, address: $0.result.address, mainPhotoURL: $0.result.mainPhotoURL) }
-        
+//        if let hotel = hotels.first {
+//            return hotel.result.map { .init(hotelNameTrans: $0.hotel_name, address: $0.address, mainPhotoURL: $0.mainPhotoURL) }
+//        }
+//        return []
+          return hotels.map { .init(hotelName: $0.hotel_name, address: $0.address, mainPhotoURL: $0.mainPhotoURL) }
     }
 }
 
@@ -51,6 +54,7 @@ extension ContentViewModel: HotelsModelProtocol {
         if isSuccess {
             let hotels = model.hotels
             let items = makeViewBasedModel(hotels)
+            print(items)
             viewDelegate?.didCellItemFetch(items)
             viewDelegate?.hideEmptyView()
         } else {

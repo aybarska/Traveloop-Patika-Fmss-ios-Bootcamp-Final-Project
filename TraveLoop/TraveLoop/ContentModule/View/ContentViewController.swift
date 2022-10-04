@@ -4,20 +4,22 @@
 //
 //  Created by Ayberk M on 30.09.2022.
 //
-
 import UIKit
 
 class ContentViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     private let viewModel = ContentViewModel()
-    
+    var isFlights: Bool = false
     private var items: [HotelCellViewModel] = []
-    var moduleMethod = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(moduleMethod)
+        if(isFlights) {
+            self.items = []
+        }
+
         viewModel.viewDelegate = self
         viewModel.didViewLoad()
         makeUI()
@@ -33,7 +35,7 @@ private extension ContentViewController {
         tableView.dataSource = self
         registerCell()
         self.navigationController?.navigationBar.topItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Source Sans Pro", size: 30)!], for: .normal)
-        
+        tableView.rowHeight = 230.0
     }
     
     func registerCell() {

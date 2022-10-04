@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 protocol ContentViewModelViewProtocol:AnyObject {
     func didCellItemFetch(_ items: [HotelCellViewModel])
     func showEmptyView()
@@ -36,6 +37,7 @@ class ContentViewModel {
 }
 
 private extension ContentViewModel {
+    
     @discardableResult
     func makeViewBasedModel(_ hotels: [Result]) -> [HotelCellViewModel] {
         //make data usabe for view
@@ -51,10 +53,10 @@ private extension ContentViewModel {
 extension ContentViewModel: HotelsModelProtocol {
     func didDataFetchProcessFinish(_ isSuccess: Bool) {
         //data we fetch from api
+        
         if isSuccess {
             let hotels = model.hotels
             let items = makeViewBasedModel(hotels)
-            print(items)
             viewDelegate?.didCellItemFetch(items)
             viewDelegate?.hideEmptyView()
         } else {

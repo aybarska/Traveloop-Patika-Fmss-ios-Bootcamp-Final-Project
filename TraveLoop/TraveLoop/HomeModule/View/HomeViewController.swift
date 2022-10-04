@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
         backItem.title = "Hotels"
         backItem.tintColor = .black
         navigationItem.backBarButtonItem = backItem
-        destinationVC?.moduleMethod = "Hotels"
+        destinationVC?.isFlights = false
         self.navigationController?.pushViewController(destinationVC!, animated: true)
 
     }
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
         backItem.title = "Flights"
         backItem.tintColor = .black
         navigationItem.backBarButtonItem = backItem
-        destinationVC?.moduleMethod = "Flights"
+        destinationVC?.isFlights = true
         self.navigationController?.pushViewController(destinationVC!, animated: true)
     }
 }

@@ -32,6 +32,12 @@ class ContentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+    }
+    
     public func drawGradient(desiredView: UIView) {
         //creates new view and puts front of desired one with gradient
         var bottomColor = UIColor.black.cgColor

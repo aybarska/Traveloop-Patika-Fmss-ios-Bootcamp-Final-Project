@@ -7,22 +7,25 @@
 import Foundation
 
 protocol HotelsModelProtocol:AnyObject {
-    func didDataFetchProcessFinish(_ isSuccess: Bool)
+    func didDataFetchProcessFinish(_ isSuccess: Bool,isFlights: Bool)
 }
 
-class HotelsModel {
+class DataModel {
     weak var delegate: HotelsModelProtocol?
     var hotels: [Result] = []
     //var hotels: Hotel = Any
     
-    func fetchData() {
+    func fetchData(isFlights: Bool) {
+        
+        if(isFlights == false) {
+            
         let headers = [
             "X-RapidAPI-Key": "d7ab706bdemsh3e5da9618095ddbp14831bjsn2e1308929f9e",
             "X-RapidAPI-Host": "booking-com.p.rapidapi.com"
         ]
         
         guard let url = URL.init(string: "https://booking-com.p.rapidapi.com/v1/hotels/search-by-coordinates?order_by=popularity&adults_number=2&units=metric&room_number=1&checkout_date=2023-10-01&filter_by_currency=EUR&locale=en-gb&checkin_date=2023-09-30&latitude=41.015137&longitude=28.97953&children_number=2&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=0&include_adjacency=true") else {
-            delegate?.didDataFetchProcessFinish(false)
+            delegate?.didDataFetchProcessFinish(false,isFlights: false)
             return
         }
         
@@ -36,12 +39,12 @@ class HotelsModel {
            
             guard error == nil
                else {
-                self?.delegate?.didDataFetchProcessFinish(false)
+                self?.delegate?.didDataFetchProcessFinish(false,isFlights: false)
                 return
             }
             
             guard let data = data else {
-                self?.delegate?.didDataFetchProcessFinish(false)
+                self?.delegate?.didDataFetchProcessFinish(false,isFlights: false)
                 return
             }
             
@@ -49,16 +52,20 @@ class HotelsModel {
                 let jsonDecoder = JSONDecoder()
                 let hotelsData = try jsonDecoder.decode(Hotel.self, from: data)
                 self?.hotels = hotelsData.result
-                self?.delegate?.didDataFetchProcessFinish(true)
+                self?.delegate?.didDataFetchProcessFinish(true,isFlights: false)
             } catch {
                 print(error)
-                self?.delegate?.didDataFetchProcessFinish(false)
+                self?.delegate?.didDataFetchProcessFinish(false,isFlights: false)
             }
 
         }
-        
-        
-        
         task.resume()
-    }
+        } else {
+            print("Get flights model")
+        }
+     }
+    
+
+    
+
 }

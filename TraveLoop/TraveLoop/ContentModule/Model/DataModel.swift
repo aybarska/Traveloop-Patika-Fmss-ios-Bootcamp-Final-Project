@@ -6,13 +6,14 @@
 //
 import Foundation
 
-protocol HotelsModelProtocol:AnyObject {
+protocol DataModelProtocol:AnyObject {
     func didDataFetchProcessFinish(_ isSuccess: Bool,isFlights: Bool)
 }
 
 class DataModel {
-    weak var delegate: HotelsModelProtocol?
+    weak var delegate: DataModelProtocol?
     var hotels: [Result] = []
+    var flights: [Flight] = []
     //var hotels: Hotel = Any
     
     func fetchData(isFlights: Bool) {
@@ -61,7 +62,40 @@ class DataModel {
         }
         task.resume()
         } else {
-            print("Get flights model")
+            // MARK: - Flight
+            guard let url = URL.init(string: "https://jsonplaceholder.typicode.com/posts") else {
+                delegate?.didDataFetchProcessFinish(false,isFlights: true)
+                return
+            }
+            
+            
+            var request: URLRequest = .init(url: url)
+            request.httpMethod = "GET"
+            
+               let task = URLSession.shared.dataTask(with: request) {[weak self] data, response, error in
+               
+                guard error == nil
+                   else {
+                    self?.delegate?.didDataFetchProcessFinish(false,isFlights: true)
+                    return
+                }
+                
+                   guard let data = data else {
+                    self?.delegate?.didDataFetchProcessFinish(false,isFlights: true)
+                    return
+                }
+                
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    self?.flights = try jsonDecoder.decode([Flight].self, from: data)
+                    self?.delegate?.didDataFetchProcessFinish(true,isFlights: true)
+                } catch {
+                    self?.delegate?.didDataFetchProcessFinish(false,isFlights: true)
+                }
+
+            }
+            
+            task.resume()
         }
      }
     

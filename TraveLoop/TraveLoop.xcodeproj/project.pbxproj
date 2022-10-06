@@ -11,9 +11,10 @@
 		03456D5828E6FB55001E6568 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456D5728E6FB55001E6568 /* ContentViewModel.swift */; };
 		03456D5E28E704B7001E6568 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03456D5D28E704B7001E6568 /* SourceSansPro-Bold.ttf */; };
 		03456D6028E71AA2001E6568 /* HotelsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456D5F28E71AA2001E6568 /* HotelsEntity.swift */; };
-		03456D6228E71AF6001E6568 /* HotelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456D6128E71AF6001E6568 /* HotelsModel.swift */; };
+		03456D6228E71AF6001E6568 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456D6128E71AF6001E6568 /* DataModel.swift */; };
 		035F26BF28E76D6F00F0A9FD /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F26BD28E76D6F00F0A9FD /* ContentTableViewCell.swift */; };
 		035F26C028E76D6F00F0A9FD /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035F26BE28E76D6F00F0A9FD /* ContentTableViewCell.xib */; };
+		03662CF828EDE7CE00FFD033 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03662CF728EDE7CE00FFD033 /* DetailsViewController.swift */; };
 		037CB24C28E447B900172AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CB24B28E447B900172AF3 /* AppDelegate.swift */; };
 		037CB24E28E447B900172AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CB24D28E447B900172AF3 /* SceneDelegate.swift */; };
 		037CB25028E447B900172AF3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CB24F28E447B900172AF3 /* HomeViewController.swift */; };
@@ -33,9 +34,10 @@
 		03456D5728E6FB55001E6568 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		03456D5D28E704B7001E6568 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Bold.ttf"; path = "../../../../../../../../../Downloads/Source_Sans_Pro/SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		03456D5F28E71AA2001E6568 /* HotelsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsEntity.swift; sourceTree = "<group>"; };
-		03456D6128E71AF6001E6568 /* HotelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsModel.swift; sourceTree = "<group>"; };
+		03456D6128E71AF6001E6568 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		035F26BD28E76D6F00F0A9FD /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		035F26BE28E76D6F00F0A9FD /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
+		03662CF728EDE7CE00FFD033 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		037CB24828E447B900172AF3 /* TraveLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraveLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037CB24B28E447B900172AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		037CB24D28E447B900172AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				03456D5F28E71AA2001E6568 /* HotelsEntity.swift */,
-				03456D6128E71AF6001E6568 /* HotelsModel.swift */,
+				03456D6128E71AF6001E6568 /* DataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +172,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		03662CF628EDE7B500FFD033 /* DetailsModule */ = {
+			isa = PBXGroup;
+			children = (
+				03662CF728EDE7CE00FFD033 /* DetailsViewController.swift */,
+			);
+			path = DetailsModule;
+			sourceTree = "<group>";
+		};
 		037CB23F28E447B900172AF3 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 		037CB24A28E447B900172AF3 /* TraveLoop */ = {
 			isa = PBXGroup;
 			children = (
+				03662CF628EDE7B500FFD033 /* DetailsModule */,
 				03456D5428E6FAE4001E6568 /* ContentModule */,
 				030E42C328E45E6C00D155ED /* HomeModule */,
 				0315B30028E449F500A0759B /* Helpers */,
@@ -287,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03456D6228E71AF6001E6568 /* HotelsModel.swift in Sources */,
+				03456D6228E71AF6001E6568 /* DataModel.swift in Sources */,
 				037CB25028E447B900172AF3 /* HomeViewController.swift in Sources */,
 				03CC6E4828E5879400D71133 /* ArticlesModel.swift in Sources */,
 				03456D6028E71AA2001E6568 /* HotelsEntity.swift in Sources */,
@@ -298,6 +309,7 @@
 				03456D5628E6FB3B001E6568 /* ContentViewController.swift in Sources */,
 				0389605328E4797B00A0CE2E /* ArticlesCollectionViewCell.swift in Sources */,
 				037CB25628E447B900172AF3 /* TraveLoop.xcdatamodeld in Sources */,
+				03662CF828EDE7CE00FFD033 /* DetailsViewController.swift in Sources */,
 				037CB24E28E447B900172AF3 /* SceneDelegate.swift in Sources */,
 				03CC6E4A28E587F500D71133 /* ArticleEntity.swift in Sources */,
 			);

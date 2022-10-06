@@ -11,18 +11,15 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let viewModel = ContentViewModel()
     var isFlights: Bool = false
-    private var items: [HotelCellViewModel] = []
+    private var itemsHotel: [HotelCellViewModel] = []
+    private var itemsFlight: [FlightCellViewModel] = []
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(isFlights) {
-            self.items = []
-        }
-
         viewModel.viewDelegate = self
-        viewModel.didViewLoad()
         makeUI()
+        viewModel.didViewLoad(isModelFlights: isFlights)
     }
     
 
@@ -51,13 +48,22 @@ private extension ContentViewController {
 
 extension ContentViewController: ContentViewModelViewProtocol {
     
-    func didCellItemFetch(_ items: [HotelCellViewModel]) {
-        self.items = items
+    func didCellItemFetchHotel(_ items: [HotelCellViewModel],isFlights: Bool) {
+        self.itemsHotel = items
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
+    func didCellItemFetchFlight(_ items: [FlightCellViewModel],isFlights: Bool) {
+        self.itemsFlight = items
+       
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+
     func showEmptyView() {
         // has to be in main
         DispatchQueue.main.async {
@@ -75,7 +81,20 @@ extension ContentViewController: ContentViewModelViewProtocol {
 
 extension ContentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didClickItem(at: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController
+        let backItem = UIBarButtonItem()
+        backItem.tintColor = .black
+        navigationItem.backBarButtonItem = backItem
+       
+        if(isFlights) {
+            detailsVC?.dataObjectFlight = viewModel.flightAtIndex(indexPath.row)
+            detailsVC?.dataType = "Flight"
+        } else {
+            detailsVC?.dataObjectHotel = viewModel.hotelAtIndex(indexPath.row)
+            detailsVC?.dataType = "Hotel"
+        }
+        self.navigationController?.pushViewController(detailsVC!, animated: true)
         
     }
 }
@@ -83,16 +102,28 @@ extension ContentViewController: UITableViewDelegate {
 extension ContentViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        if(isFlights) {
+            return itemsFlight.count
+        } else {
+            return itemsHotel.count
+        }
+        
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell") as! ContentTableViewCell
-     
-        cell.titleLabel.text = items[indexPath.row].hotelName
-        cell.descriptionLabel.text = items[indexPath.row].address
-        cell.imageUrl = items[indexPath.row].mainPhotoURL ?? ""
+        if(isFlights) {
+            cell.titleLabel.text = itemsFlight[indexPath.row].Airline
+            cell.descriptionLabel.text = itemsFlight[indexPath.row].FDate
+
+        } else {
+            cell.titleLabel.text = itemsHotel[indexPath.row].hotelName
+            cell.descriptionLabel.text = itemsHotel[indexPath.row].address
+            cell.imageUrl = itemsHotel[indexPath.row].mainPhotoURL ?? ""
+        }
+        
+
         
         return cell
     }

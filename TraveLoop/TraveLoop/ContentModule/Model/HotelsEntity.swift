@@ -13,12 +13,16 @@ struct HotelCellViewModel {
     var mainPhotoURL:String?
 }
 
+struct FlightCellViewModel {
+    var From: String?
+    var To: String?
+    var Airline:String?
+    var FDate:String?
+}
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
 //   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
-
-import Foundation
 
 // MARK: - Welcome
 struct Hotel: Decodable {
@@ -32,4 +36,11 @@ struct Result: Decodable {
     let mainPhotoURL: String?
 }
 
+// MARK: - Flight
+struct Flight: Decodable {
+    var from: String
+    var to: String
+    var airline: String
+    var date: String
+}
 

@@ -17,6 +17,9 @@
 		035F26BF28E76D6F00F0A9FD /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F26BD28E76D6F00F0A9FD /* ContentTableViewCell.swift */; };
 		035F26C028E76D6F00F0A9FD /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035F26BE28E76D6F00F0A9FD /* ContentTableViewCell.xib */; };
 		03662CF828EDE7CE00FFD033 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03662CF728EDE7CE00FFD033 /* DetailsViewController.swift */; };
+		036AC74E28F041C300950628 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AC74D28F041C300950628 /* CoreDataManager.swift */; };
+		036AC75328F044EB00950628 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AC75228F044EB00950628 /* DetailsViewModel.swift */; };
+		036AC75628F0454800950628 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AC75528F0454800950628 /* BookmarksViewModel.swift */; };
 		037CB24C28E447B900172AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CB24B28E447B900172AF3 /* AppDelegate.swift */; };
 		037CB24E28E447B900172AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CB24D28E447B900172AF3 /* SceneDelegate.swift */; };
 		037CB25028E447B900172AF3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CB24F28E447B900172AF3 /* HomeViewController.swift */; };
@@ -26,6 +29,7 @@
 		037CB25B28E447BE00172AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037CB25928E447BE00172AF3 /* LaunchScreen.storyboard */; };
 		0389605328E4797B00A0CE2E /* ArticlesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389605128E4797B00A0CE2E /* ArticlesCollectionViewCell.swift */; };
 		0389605428E4797B00A0CE2E /* ArticlesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0389605228E4797B00A0CE2E /* ArticlesCollectionViewCell.xib */; };
+		038D1CE228F0090000826EC2 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D1CE128F0090000826EC2 /* BookmarksViewController.swift */; };
 		03CC6E4828E5879400D71133 /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC6E4728E5879400D71133 /* ArticlesModel.swift */; };
 		03CC6E4A28E587F500D71133 /* ArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC6E4928E587F500D71133 /* ArticleEntity.swift */; };
 		03F957E228E57F1600F5A20A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F957E128E57F1600F5A20A /* HomeViewModel.swift */; };
@@ -42,6 +46,9 @@
 		035F26BD28E76D6F00F0A9FD /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		035F26BE28E76D6F00F0A9FD /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
 		03662CF728EDE7CE00FFD033 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		036AC74D28F041C300950628 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		036AC75228F044EB00950628 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		036AC75528F0454800950628 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		037CB24828E447B900172AF3 /* TraveLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraveLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037CB24B28E447B900172AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		037CB24D28E447B900172AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +60,7 @@
 		037CB25C28E447BE00172AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0389605128E4797B00A0CE2E /* ArticlesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCollectionViewCell.swift; sourceTree = "<group>"; };
 		0389605228E4797B00A0CE2E /* ArticlesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlesCollectionViewCell.xib; sourceTree = "<group>"; };
+		038D1CE128F0090000826EC2 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		03CC6E4728E5879400D71133 /* ArticlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesModel.swift; sourceTree = "<group>"; };
 		03CC6E4928E587F500D71133 /* ArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleEntity.swift; sourceTree = "<group>"; };
 		03F957E128E57F1600F5A20A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -119,6 +127,7 @@
 			children = (
 				037CB24D28E447B900172AF3 /* SceneDelegate.swift */,
 				037CB24B28E447B900172AF3 /* AppDelegate.swift */,
+				036AC74D28F041C300950628 /* CoreDataManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -204,9 +213,41 @@
 		03662CF628EDE7B500FFD033 /* DetailsModule */ = {
 			isa = PBXGroup;
 			children = (
-				03662CF728EDE7CE00FFD033 /* DetailsViewController.swift */,
+				036AC75128F044B600950628 /* Model */,
+				036AC75028F044AE00950628 /* ViewModel */,
+				036AC74F28F044A600950628 /* View */,
 			);
 			path = DetailsModule;
+			sourceTree = "<group>";
+		};
+		036AC74F28F044A600950628 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03662CF728EDE7CE00FFD033 /* DetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		036AC75028F044AE00950628 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				036AC75228F044EB00950628 /* DetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		036AC75128F044B600950628 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		036AC75428F0453200950628 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		037CB23F28E447B900172AF3 = {
@@ -228,6 +269,7 @@
 		037CB24A28E447B900172AF3 /* TraveLoop */ = {
 			isa = PBXGroup;
 			children = (
+				038D1CDE28F008D900826EC2 /* BookmarksModule */,
 				0351713E28EFA78500BDF218 /* SearchModule */,
 				03662CF628EDE7B500FFD033 /* DetailsModule */,
 				03456D5428E6FAE4001E6568 /* ContentModule */,
@@ -249,6 +291,32 @@
 				0389605228E4797B00A0CE2E /* ArticlesCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		038D1CDE28F008D900826EC2 /* BookmarksModule */ = {
+			isa = PBXGroup;
+			children = (
+				036AC75428F0453200950628 /* Model */,
+				038D1CE028F008EB00826EC2 /* ViewModel */,
+				038D1CDF28F008E400826EC2 /* View */,
+			);
+			path = BookmarksModule;
+			sourceTree = "<group>";
+		};
+		038D1CDF28F008E400826EC2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				038D1CE128F0090000826EC2 /* BookmarksViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		038D1CE028F008EB00826EC2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				036AC75528F0454800950628 /* BookmarksViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,11 +397,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0351714128EFA7C700BDF218 /* SearchViewController.swift in Sources */,
+				036AC75328F044EB00950628 /* DetailsViewModel.swift in Sources */,
 				03456D6228E71AF6001E6568 /* DataModel.swift in Sources */,
 				0351714428EFAC3100BDF218 /* SearchViewModel.swift in Sources */,
 				037CB25028E447B900172AF3 /* HomeViewController.swift in Sources */,
 				03CC6E4828E5879400D71133 /* ArticlesModel.swift in Sources */,
 				03456D6028E71AA2001E6568 /* HotelsEntity.swift in Sources */,
+				036AC74E28F041C300950628 /* CoreDataManager.swift in Sources */,
 				035F26BF28E76D6F00F0A9FD /* ContentTableViewCell.swift in Sources */,
 				03F957E228E57F1600F5A20A /* HomeViewModel.swift in Sources */,
 				037CB24C28E447B900172AF3 /* AppDelegate.swift in Sources */,
@@ -342,7 +412,9 @@
 				0389605328E4797B00A0CE2E /* ArticlesCollectionViewCell.swift in Sources */,
 				037CB25628E447B900172AF3 /* TraveLoop.xcdatamodeld in Sources */,
 				03662CF828EDE7CE00FFD033 /* DetailsViewController.swift in Sources */,
+				036AC75628F0454800950628 /* BookmarksViewModel.swift in Sources */,
 				037CB24E28E447B900172AF3 /* SceneDelegate.swift in Sources */,
+				038D1CE228F0090000826EC2 /* BookmarksViewController.swift in Sources */,
 				03CC6E4A28E587F500D71133 /* ArticleEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

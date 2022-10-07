@@ -16,6 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var bookmarkButton: UIButton!
     var dataObjectHotel: Result?
     var dataObjectFlight: Flight?
+    var dataObjectArticle: Value?
     var dataType: String = "Category"
     
     override func viewDidLoad() {
@@ -26,11 +27,15 @@ class DetailsViewController: UIViewController {
             titleLabel.text = dataObjectHotel?.hotel_name
             descTextView.text = dataObjectHotel?.address
             imageView.image = UIImage(named: "hotelsPlaceholder")
-        } else {
+        } else if(dataType == "Flight"){
             titleLabel.text = dataObjectFlight?.airline
             //var descText = dataObjectFlight?.from  + " -> " + dataObjectFlight?.to  + " " + dataObjectFlight?.date
             descTextView.text = "\(dataObjectFlight?.from ?? " ") -> \(dataObjectFlight?.to ?? " ") \(dataObjectFlight?.date ?? " ")"
             imageView.image = UIImage(named: "flightsPlaceholder")
+        } else if(dataType == "Article"){
+            titleLabel.text = dataObjectArticle?.title
+            descTextView.text = dataObjectArticle?.description
+            imageView.image = UIImage(named: "placeholder1")
         }
         
         tagLabel.text = dataType

@@ -12,9 +12,21 @@ struct ArticlesCellViewModel {
     var description: String?
 }
 
+//struct Article: Decodable {
+//    var userId: Int
+//    var id: Int
+//    var title: String
+//    var body: String
+//}
+
+// MARK: - Welcome
 struct Article: Decodable {
-    var userId: Int
-    var id: Int
-    var title: String
-    var body: String
+    let value: [Value]
+}
+
+// MARK: - Result
+struct Value: Decodable {
+    let title: String?
+    let description: String?
+    let url: String?
 }

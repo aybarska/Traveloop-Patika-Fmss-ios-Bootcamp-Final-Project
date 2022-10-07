@@ -20,6 +20,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeUI()
         shapeImage(desiredImage: imageView)
         if(dataType == "Hotel") {
             titleLabel.text = dataObjectHotel?.hotel_name
@@ -36,7 +37,13 @@ class DetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    func makeUI() {
+        //self.navigationController?.navigationBar.topItem?.backBarButtonItem?.
+        //navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
+       // navigationItem.backBarButtonItem?.setBackgroundImage(UIImage(named: "HomeButtonBg"), for: .normal, barMetrics: .default)
+        //self.navigationItem.backBarButtonItem?.setBackButtonBackgroundImage(UIImage(named: "HomeButtonBg"), for: .normal, barMetrics: .default)
+        
+    }
     
     public func shapeImage(desiredImage: UIView) {
         //cool image shape

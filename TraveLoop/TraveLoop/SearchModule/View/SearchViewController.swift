@@ -38,6 +38,16 @@ class SearchViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func setupActivityIndicator() {
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
@@ -50,6 +60,7 @@ class SearchViewController: UIViewController {
     @IBAction func hotelButtonAction(_ sender: Any) {
         hotelButton.setImage(UIImage(named:"hActive"), for: .normal)
         flightButton.setImage(UIImage(named:"fPassive"), for: .normal)
+        search.searchTextField.text = ""
         print("hotel")
         self.isFlights = false
         viewModel.getData(isModelFlights: false)
@@ -59,6 +70,7 @@ class SearchViewController: UIViewController {
     @IBAction func flightButtonAction(_ sender: Any) {
         flightButton.setImage(UIImage(named:"fActive"), for: .normal)
         hotelButton.setImage(UIImage(named:"hPassive"), for: .normal)
+        search.searchTextField.text = ""
         print("flight")
         self.isFlights = true
         viewModel.getData(isModelFlights: true)

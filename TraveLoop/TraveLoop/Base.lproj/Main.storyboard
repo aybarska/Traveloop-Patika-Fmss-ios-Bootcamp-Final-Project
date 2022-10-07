@@ -158,38 +158,44 @@
             </objects>
             <point key="canvasLocation" x="3045" y="-533"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="mCR-KR-o5t">
             <objects>
-                <viewController id="ohp-BH-wDL" sceneMemberID="viewController">
+                <viewController id="ohp-BH-wDL" customClass="SearchViewController" customModule="TraveLoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yB2-jo-F66">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eti-iZ-qfn">
-                                <rect key="frame" x="20" y="64" width="374" height="37"/>
+                                <rect key="frame" x="20" y="108" width="374" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" scopeBarBackgroundImage="search" translatesAutoresizingMaskIntoConstraints="NO" id="90R-fj-glp">
-                                <rect key="frame" x="7" y="180" width="400" height="51"/>
+                                <rect key="frame" x="7" y="224" width="400" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pNb-eO-kci">
-                                <rect key="frame" x="0.0" y="232" width="414" height="581"/>
+                                <rect key="frame" x="0.0" y="276" width="414" height="537"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-Ug-mE0">
-                                <rect key="frame" x="20" y="115" width="120" height="49"/>
+                                <rect key="frame" x="20" y="159" width="120" height="49"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="hPassive"/>
+                                <connections>
+                                    <action selector="hotelButtonAction:" destination="ohp-BH-wDL" eventType="touchUpInside" id="BVk-NI-AAA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uT-el-nUe">
-                                <rect key="frame" x="148" y="115" width="133" height="53"/>
+                                <rect key="frame" x="148" y="159" width="133" height="53"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="fPassive"/>
                                 <buttonConfiguration key="configuration" style="plain" image="fPassive"/>
+                                <connections>
+                                    <action selector="flightButtonAction:" destination="ohp-BH-wDL" eventType="touchUpInside" id="gSH-tA-Uqu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CW4-oR-3sY"/>
@@ -213,11 +219,17 @@
                             <constraint firstItem="pNb-eO-kci" firstAttribute="top" secondItem="90R-fj-glp" secondAttribute="bottom" constant="1" id="xcA-fx-duH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="SearchUnfill" selectedImage="SearchFill" id="jAv-Hh-KTY"/>
+                    <navigationItem key="navigationItem" id="WmM-aM-0vA"/>
+                    <connections>
+                        <outlet property="flightButton" destination="0uT-el-nUe" id="3ql-lu-XdF"/>
+                        <outlet property="hotelButton" destination="aGp-Ug-mE0" id="8vc-cx-4cT"/>
+                        <outlet property="search" destination="90R-fj-glp" id="HQd-RX-0Os"/>
+                        <outlet property="tableView" destination="pNb-eO-kci" id="x0z-eF-aOa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC5-2d-FyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.753623188406" y="123.88392857142857"/>
+            <point key="canvasLocation" x="2102.898550724638" y="123.88392857142857"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="MYA-Lv-Ii3">
@@ -246,7 +258,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="87y-bX-fFl">
-                                <rect key="frame" x="20" y="555.5" width="374" height="236.5"/>
+                                <rect key="frame" x="20" y="555.5" width="374" height="240.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -254,7 +266,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrv-w2-R5j">
-                                <rect key="frame" x="35" y="812" width="344" height="45"/>
+                                <rect key="frame" x="35" y="801" width="344" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="nfV-It-HMI"/>
                                 </constraints>
@@ -271,11 +283,10 @@
                         <constraints>
                             <constraint firstItem="r0C-YK-dMH" firstAttribute="top" secondItem="FpL-bn-l0Q" secondAttribute="bottom" constant="30" id="1bG-dT-uCA"/>
                             <constraint firstItem="WIM-l0-eTv" firstAttribute="trailing" secondItem="Jrv-w2-R5j" secondAttribute="trailing" constant="35" id="3ak-u9-rIg"/>
+                            <constraint firstItem="WIM-l0-eTv" firstAttribute="bottom" secondItem="Jrv-w2-R5j" secondAttribute="bottom" constant="16" id="4Xn-mQ-fI1"/>
                             <constraint firstItem="FpL-bn-l0Q" firstAttribute="top" secondItem="Q0U-tq-2Vx" secondAttribute="top" id="52v-0Q-Y56"/>
-                            <constraint firstItem="Jrv-w2-R5j" firstAttribute="top" secondItem="87y-bX-fFl" secondAttribute="bottom" constant="20" id="78A-Gs-ZbW"/>
                             <constraint firstItem="QIH-Yr-XQU" firstAttribute="leading" secondItem="WIM-l0-eTv" secondAttribute="leading" constant="20" id="BCj-jc-FPi"/>
                             <constraint firstItem="WIM-l0-eTv" firstAttribute="trailing" secondItem="r0C-YK-dMH" secondAttribute="trailing" constant="20" id="BNw-AR-EUE"/>
-                            <constraint firstItem="WIM-l0-eTv" firstAttribute="bottom" secondItem="Jrv-w2-R5j" secondAttribute="bottom" constant="5" id="I03-SQ-Rhz"/>
                             <constraint firstItem="87y-bX-fFl" firstAttribute="leading" secondItem="WIM-l0-eTv" secondAttribute="leading" constant="20" id="KMp-ak-1KN"/>
                             <constraint firstItem="FpL-bn-l0Q" firstAttribute="leading" secondItem="WIM-l0-eTv" secondAttribute="leading" id="ZUT-wf-6VD"/>
                             <constraint firstItem="Jrv-w2-R5j" firstAttribute="leading" secondItem="WIM-l0-eTv" secondAttribute="leading" constant="35" id="cLq-11-mHe"/>
@@ -283,6 +294,7 @@
                             <constraint firstItem="WIM-l0-eTv" firstAttribute="trailing" secondItem="QIH-Yr-XQU" secondAttribute="trailing" constant="20" id="dLg-hs-unE"/>
                             <constraint firstItem="87y-bX-fFl" firstAttribute="top" secondItem="QIH-Yr-XQU" secondAttribute="bottom" constant="20" id="hBG-iv-5iu"/>
                             <constraint firstItem="QIH-Yr-XQU" firstAttribute="top" secondItem="r0C-YK-dMH" secondAttribute="bottom" constant="10" id="lii-fV-ZkH"/>
+                            <constraint firstItem="Jrv-w2-R5j" firstAttribute="top" secondItem="87y-bX-fFl" secondAttribute="bottom" constant="5" id="nSZ-eQ-eLw"/>
                             <constraint firstItem="r0C-YK-dMH" firstAttribute="leading" secondItem="WIM-l0-eTv" secondAttribute="leading" constant="20" id="rHs-dP-4cJ"/>
                             <constraint firstItem="WIM-l0-eTv" firstAttribute="trailing" secondItem="87y-bX-fFl" secondAttribute="trailing" constant="20" id="t1w-cf-bdb"/>
                         </constraints>
@@ -298,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBN-RX-3TS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102.898550724638" y="123.88392857142857"/>
+            <point key="canvasLocation" x="3045" y="124"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="N6J-KI-pUV">
@@ -355,7 +367,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="rZM-Hy-gNu" kind="relationship" relationship="viewControllers" id="Wxl-zD-Vm1"/>
-                        <segue destination="ohp-BH-wDL" kind="relationship" relationship="viewControllers" id="dz0-uM-lhz"/>
+                        <segue destination="Qpz-Xf-SDZ" kind="relationship" relationship="viewControllers" id="dz0-uM-lhz"/>
                         <segue destination="cf1-Dx-mtb" kind="relationship" relationship="viewControllers" id="wIT-jf-wT1"/>
                     </connections>
                 </tabBarController>
@@ -383,6 +395,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pc4-fP-tzD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1192.753623188406" y="-542.41071428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Duj-rc-GMm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qpz-Xf-SDZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="SearchUnfill" selectedImage="SearchFill" id="jAv-Hh-KTY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SrM-0E-62C">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ohp-BH-wDL" kind="relationship" relationship="rootViewController" id="Jpr-I8-6Bk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKM-Wa-G3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192.753623188406" y="123.88392857142857"/>
         </scene>
     </scenes>
     <resources>

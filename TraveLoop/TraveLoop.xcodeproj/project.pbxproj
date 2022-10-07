@@ -12,6 +12,8 @@
 		03456D5E28E704B7001E6568 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03456D5D28E704B7001E6568 /* SourceSansPro-Bold.ttf */; };
 		03456D6028E71AA2001E6568 /* HotelsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456D5F28E71AA2001E6568 /* HotelsEntity.swift */; };
 		03456D6228E71AF6001E6568 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456D6128E71AF6001E6568 /* DataModel.swift */; };
+		0351714128EFA7C700BDF218 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351714028EFA7C700BDF218 /* SearchViewController.swift */; };
+		0351714428EFAC3100BDF218 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351714328EFAC3100BDF218 /* SearchViewModel.swift */; };
 		035F26BF28E76D6F00F0A9FD /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F26BD28E76D6F00F0A9FD /* ContentTableViewCell.swift */; };
 		035F26C028E76D6F00F0A9FD /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035F26BE28E76D6F00F0A9FD /* ContentTableViewCell.xib */; };
 		03662CF828EDE7CE00FFD033 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03662CF728EDE7CE00FFD033 /* DetailsViewController.swift */; };
@@ -35,6 +37,8 @@
 		03456D5D28E704B7001E6568 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Bold.ttf"; path = "../../../../../../../../../Downloads/Source_Sans_Pro/SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		03456D5F28E71AA2001E6568 /* HotelsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsEntity.swift; sourceTree = "<group>"; };
 		03456D6128E71AF6001E6568 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		0351714028EFA7C700BDF218 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0351714328EFAC3100BDF218 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		035F26BD28E76D6F00F0A9FD /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		035F26BE28E76D6F00F0A9FD /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
 		03662CF728EDE7CE00FFD033 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +167,31 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		0351713E28EFA78500BDF218 /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				0351714228EFAC2100BDF218 /* ViewModel */,
+				0351713F28EFA79B00BDF218 /* View */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		0351713F28EFA79B00BDF218 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0351714028EFA7C700BDF218 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0351714228EFAC2100BDF218 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0351714328EFAC3100BDF218 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		035F26BC28E76D3700F0A9FD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +228,7 @@
 		037CB24A28E447B900172AF3 /* TraveLoop */ = {
 			isa = PBXGroup;
 			children = (
+				0351713E28EFA78500BDF218 /* SearchModule */,
 				03662CF628EDE7B500FFD033 /* DetailsModule */,
 				03456D5428E6FAE4001E6568 /* ContentModule */,
 				030E42C328E45E6C00D155ED /* HomeModule */,
@@ -298,7 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0351714128EFA7C700BDF218 /* SearchViewController.swift in Sources */,
 				03456D6228E71AF6001E6568 /* DataModel.swift in Sources */,
+				0351714428EFAC3100BDF218 /* SearchViewModel.swift in Sources */,
 				037CB25028E447B900172AF3 /* HomeViewController.swift in Sources */,
 				03CC6E4828E5879400D71133 /* ArticlesModel.swift in Sources */,
 				03456D6028E71AA2001E6568 /* HotelsEntity.swift in Sources */,

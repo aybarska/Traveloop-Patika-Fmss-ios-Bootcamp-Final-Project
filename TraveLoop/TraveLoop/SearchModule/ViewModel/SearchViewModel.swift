@@ -1,24 +1,25 @@
 //
-//  ContentViewModel.swift
+//  SearchViewModel.swift
 //  TraveLoop
 //
-//  Created by Ayberk M on 30.09.2022.
+//  Created by Ayberk M on 7.10.2022.
 //
 
 import Foundation
 
 
-protocol ContentViewModelViewProtocol:AnyObject {
+protocol SearchViewModelViewProtocol:AnyObject {
     func didCellItemFetchHotel(_ items: [HotelCellViewModel], isFlights: Bool)
     func didCellItemFetchFlight(_ items: [FlightCellViewModel], isFlights: Bool)
     func showEmptyView()
     func hideEmptyView()
+    func hideLoadingView()
 }
 
 
-class ContentViewModel {
+class SearchViewModel {
     private let model = DataModel()
-    weak var viewDelegate: ContentViewModelViewProtocol?
+    weak var viewDelegate: SearchViewModelViewProtocol?
     
     init(){
         model.delegate = self
@@ -36,6 +37,11 @@ class ContentViewModel {
         model.fetchData(isFlights: isModelFlights)
     }
     
+    func getData(isModelFlights: Bool) {
+        
+        model.fetchData(isFlights: isModelFlights)
+    }
+    
     func flightAtIndex(_ index: Int) -> Flight{
         return model.flights[index]
     }
@@ -46,7 +52,7 @@ class ContentViewModel {
     
 }
 
-private extension ContentViewModel {
+private extension SearchViewModel {
     
     @discardableResult
     func makeViewBasedModel(_ hotels: [Result]) -> [HotelCellViewModel] {
@@ -66,7 +72,7 @@ private extension ContentViewModel {
     
 }
 
-extension ContentViewModel: DataModelProtocol {
+extension SearchViewModel: DataModelProtocol {
     func didDataFetchProcessFinish(_ isSuccess: Bool, isFlights: Bool) {
         //data we fetch from api
         if(isFlights == false) {
@@ -74,7 +80,8 @@ extension ContentViewModel: DataModelProtocol {
             let hotels = model.hotels
             let items = makeViewBasedModel(hotels) //
             viewDelegate?.didCellItemFetchHotel(items, isFlights: false) //this is workin on view
-            viewDelegate?.hideEmptyView()
+            //viewDelegate?.hideEmptyView()
+            viewDelegate?.hideLoadingView()
         } else {
             viewDelegate?.showEmptyView()
         }
@@ -83,7 +90,8 @@ extension ContentViewModel: DataModelProtocol {
                 let flights = model.flights
                 let items = makeViewBasedModelFlights(flights)
                 viewDelegate?.didCellItemFetchFlight(items, isFlights: true) //this is workin on view
-                viewDelegate?.hideEmptyView()
+                //viewDelegate?.hideEmptyView()
+                viewDelegate?.hideLoadingView()
             } else {
                 viewDelegate?.showEmptyView()
             }

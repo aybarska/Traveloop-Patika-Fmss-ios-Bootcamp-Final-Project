@@ -63,6 +63,7 @@ class DataModel {
         task.resume()
         } else {
             // MARK: - Flight
+           
             guard let url = URL.init(string:"https://flight-info-api-v2-production.up.railway.app/flights?to=ISTANBUL?from=Ankara?status=-") else {
                 delegate?.didDataFetchProcessFinish(false,isFlights: true)
                 return

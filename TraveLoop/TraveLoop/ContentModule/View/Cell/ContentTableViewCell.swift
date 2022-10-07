@@ -12,12 +12,14 @@ class ContentTableViewCell: UITableViewCell {
     @IBOutlet weak var cellBgImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    var imageUrl: String = ""
+   // var imageUrl: String = "hotelsPlaceholder"
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+       
         shapeImage(desiredImage: cellBgImageView)
+        
     }
     
     override func draw(_ rect: CGRect) {
@@ -27,7 +29,6 @@ class ContentTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     

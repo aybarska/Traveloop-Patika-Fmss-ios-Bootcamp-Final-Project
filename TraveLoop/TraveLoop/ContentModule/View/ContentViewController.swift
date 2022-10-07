@@ -116,11 +116,13 @@ extension ContentViewController: UITableViewDataSource {
         if(isFlights) {
             cell.titleLabel.text = itemsFlight[indexPath.row].Airline
             cell.descriptionLabel.text = itemsFlight[indexPath.row].FDate
+            cell.cellBgImageView.image = UIImage(named: "flightsPlaceholder")
 
         } else {
             cell.titleLabel.text = itemsHotel[indexPath.row].hotelName
             cell.descriptionLabel.text = itemsHotel[indexPath.row].address
-            cell.imageUrl = itemsHotel[indexPath.row].mainPhotoURL ?? ""
+            cell.cellBgImageView.image = UIImage(named: "hotelsPlaceholder")
+
         }
         
 

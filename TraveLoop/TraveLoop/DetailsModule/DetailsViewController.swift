@@ -24,9 +24,12 @@ class DetailsViewController: UIViewController {
         if(dataType == "Hotel") {
             titleLabel.text = dataObjectHotel?.hotel_name
             descTextView.text = dataObjectHotel?.address
+            imageView.image = UIImage(named: "hotelsPlaceholder")
         } else {
             titleLabel.text = dataObjectFlight?.airline
-            descTextView.text = dataObjectFlight?.from ?? "" + " -> " + dataObjectFlight?.to ?? "" + " " + (dataObjectFlight?.date ?? "")
+            //var descText = dataObjectFlight?.from  + " -> " + dataObjectFlight?.to  + " " + dataObjectFlight?.date
+            descTextView.text = "\(dataObjectFlight?.from ?? " ") -> \(dataObjectFlight?.to ?? " ") \(dataObjectFlight?.date ?? " ")"
+            imageView.image = UIImage(named: "flightsPlaceholder")
         }
         
         tagLabel.text = dataType

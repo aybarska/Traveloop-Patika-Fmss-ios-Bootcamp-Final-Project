@@ -2,7 +2,7 @@
 
 # Traveloop App🪡
 
- <img alt="Traveloop" src="https://github.com/aybarska/Traveloop-Patika-Fmss-ios-Bootcamp-Final-Project/blob/main/screenshots/logo.jpg" width="25%">
+ <img alt="Traveloop" src="https://github.com/aybarska/Traveloop-Patika-Fmss-ios-Bootcamp-Final-Project/blob/main/screenshots/logo.png" width="25%">
  // logo inspired by paycell's style "p"
  
 Patika, FMSS Ios dev. Bootcamp Final Project
@@ -33,15 +33,12 @@ and run with Xcode
 
 
 ## Screenshots
-
+<p>
   <img alt="Traveloop" src="https://github.com/aybarska/Traveloop-Patika-Fmss-ios-Bootcamp-Final-Project/blob/main/screenshots/0main.png" width="45%">
-    
-      <img alt="Traveloop" src="https://github.com/aybarska/Traveloop-Patika-Fmss-ios-Bootcamp-Final-Project/blob/main/screenshots/0hotels.png" width="45%">
-      <img alt="Traveloop" src="https://github.com/aybarska/Traveloop-Patika-Fmss-ios-Bootcamp-Final-Project/blob/main/screenshots/0flights.png" width="45%">
-        
-
-  <img alt="Traveloop" src="https://github.com/aybarska/Traveloop-Patika-Fmss-ios-Bootcamp-Final-Project/blob/main/screenshots/0articlesitem.png" width="45%">
-  
+    <img alt="Traveloop" src="https://github.com/aybarska/Traveloop-Patika-Fmss-ios-Bootcamp-Final-Project/blob/main/screenshots/0articlesitem.png" width="45%">
+  <img alt="Traveloop" src="https://github.com/aybarska/Traveloop-Patika-Fmss-ios-Bootcamp-Final-Project/blob/main/screenshots/0hotels.png" width="45%">
+  <img alt="Traveloop" src="https://github.com/aybarska/Traveloop-Patika-Fmss-ios-Bootcamp-Final-Project/blob/main/screenshots/0flights.png" width="45%">
+  </p>
   
     
 

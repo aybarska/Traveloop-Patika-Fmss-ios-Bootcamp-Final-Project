@@ -252,13 +252,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIH-Yr-XQU">
-                                <rect key="frame" x="20" y="499.5" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="20" y="499.5" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="87y-bX-fFl">
-                                <rect key="frame" x="20" y="555.5" width="374" height="240.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87y-bX-fFl">
+                                <rect key="frame" x="20" y="547" width="374" height="249"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -276,6 +276,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                     <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="bookmarkButton:" destination="NIz-Bm-BzS" eventType="touchUpInside" id="FeC-A8-nMJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WIM-l0-eTv"/>
@@ -312,22 +315,22 @@
             </objects>
             <point key="canvasLocation" x="3045" y="124"/>
         </scene>
-        <!--View Controller-->
+        <!--Bookmarks View Controller-->
         <scene sceneID="N6J-KI-pUV">
             <objects>
-                <viewController id="cf1-Dx-mtb" sceneMemberID="viewController">
+                <viewController id="cf1-Dx-mtb" customClass="BookmarksViewController" customModule="TraveLoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nwm-6b-Cy1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBf-UV-abk">
-                                <rect key="frame" x="20" y="64" width="223" height="37"/>
+                                <rect key="frame" x="20" y="108" width="223" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="y59-Vw-MuT">
-                                <rect key="frame" x="0.0" y="121" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="165" width="414" height="648"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -343,11 +346,15 @@
                             <constraint firstItem="ei9-bk-Tz0" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="YBf-UV-abk" secondAttribute="trailing" constant="171" id="xyi-aO-v1Z"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="BookmarksUnfill" id="Paf-CA-n9R"/>
+                    <navigationItem key="navigationItem" id="Ob3-m3-gaw"/>
+                    <connections>
+                        <outlet property="staticTitleLabel" destination="YBf-UV-abk" id="Dg4-td-hC8"/>
+                        <outlet property="tableView" destination="y59-Vw-MuT" id="zdm-cz-s2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2KN-44-NKZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.753623188406" y="827.67857142857144"/>
+            <point key="canvasLocation" x="2102.898550724638" y="827.67857142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aNX-H1-fcO">
@@ -368,7 +375,7 @@
                     <connections>
                         <segue destination="rZM-Hy-gNu" kind="relationship" relationship="viewControllers" id="Wxl-zD-Vm1"/>
                         <segue destination="Qpz-Xf-SDZ" kind="relationship" relationship="viewControllers" id="dz0-uM-lhz"/>
-                        <segue destination="cf1-Dx-mtb" kind="relationship" relationship="viewControllers" id="wIT-jf-wT1"/>
+                        <segue destination="Bgo-Zd-r8S" kind="relationship" relationship="viewControllers" id="wIT-jf-wT1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zz8-M7-wtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -414,6 +421,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKM-Wa-G3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1192.753623188406" y="123.88392857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8cf-em-GGz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bgo-Zd-r8S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="BookmarksUnfill" id="Paf-CA-n9R"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GRg-ga-ztH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cf1-Dx-mtb" kind="relationship" relationship="rootViewController" id="6v7-9N-2lE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hla-Aw-GSU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192.753623188406" y="827.67857142857144"/>
         </scene>
     </scenes>
     <resources>

@@ -103,7 +103,16 @@ extension HomeViewController: HomeViewModelViewProtocol {
 extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
+        //collectionView.deselectRow(at: indexPath, animated: true)
+        let detailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController
+        let backItem = UIBarButtonItem()
+        backItem.tintColor = .black
+        navigationItem.backBarButtonItem = backItem
+       
+            detailsVC?.dataObjectArticle = viewModel.articleAtIndex(indexPath.row)
+            detailsVC?.dataType = "Article"
+        
+        self.navigationController?.pushViewController(detailsVC!, animated: true)
     }
     
 }

@@ -13,11 +13,16 @@ protocol ArticlesModelProtocol:AnyObject {
 
 class ArticlesModel {
     weak var delegate: ArticlesModelProtocol?
-    var articles: [Article] = []
+    var articles: [Value] = []
     
     func fetchData() {
         
-        guard let url = URL.init(string: "https://jsonplaceholder.typicode.com/posts") else {
+        let headers = [
+            "X-RapidAPI-Key": "d7ab706bdemsh3e5da9618095ddbp14831bjsn2e1308929f9e",
+            "X-RapidAPI-Host": "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        ]
+        
+        guard let url = URL.init(string: "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=travel%20places&pageNumber=1&pageSize=20&autoCorrect=true&safeSearch=true&fromPublishedDate=null&toPublishedDate=null") else {
             delegate?.didDataFetchProcessFinish(false)
             return
         }
@@ -25,6 +30,7 @@ class ArticlesModel {
         
         var request: URLRequest = .init(url: url)
         request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
         
            let task = URLSession.shared.dataTask(with: request) {[weak self] data, response, error in
            
@@ -39,14 +45,17 @@ class ArticlesModel {
                 return
             }
             
-            do {
-                let jsonDecoder = JSONDecoder()
-                self?.articles = try jsonDecoder.decode([Article].self, from: data)
-                self?.delegate?.didDataFetchProcessFinish(true)
-            } catch {
-                print("Json decode")
-                self?.delegate?.didDataFetchProcessFinish(false)
-            }
+               
+               do {
+                   let jsonDecoder = JSONDecoder()
+                   let articleData = try jsonDecoder.decode(Article.self, from: data)
+                   self?.articles = articleData.value
+                   self?.delegate?.didDataFetchProcessFinish(true)
+               } catch {
+                   print(error)
+                   self?.delegate?.didDataFetchProcessFinish(false)
+               }
+
 
         }
         

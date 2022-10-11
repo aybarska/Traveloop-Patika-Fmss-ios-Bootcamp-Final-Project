@@ -22,8 +22,8 @@
 		</dict>
 	</dict>
 	<key>UIAppFonts</key>
-	<array>
-		<string>SourceSansPro-Bold.ttf</string>
-	</array>
+	<array/>
+	<key></key>
+	<string>SourceSansPro-Bold.ttf</string>
 </dict>
 </plist>

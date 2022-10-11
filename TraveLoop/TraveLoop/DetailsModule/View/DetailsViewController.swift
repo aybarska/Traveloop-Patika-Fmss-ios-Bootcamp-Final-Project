@@ -14,14 +14,19 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var descTextView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!
+    
     var dataObjectHotel: Result?
     var dataObjectFlight: Flight?
     var dataObjectArticle: Value?
+    var bookmarkObject: Bookmarks?
     var dataType: String = "Category"
+    var isBookmark: Bool = false
+    
     
     override func viewDidLoad() {
+      
         super.viewDidLoad()
-        makeUI()
+        //makeUI()
         shapeImage(desiredImage: imageView)
         if(dataType == "Hotel") {
             titleLabel.text = dataObjectHotel?.hotel_name
@@ -38,16 +43,19 @@ class DetailsViewController: UIViewController {
             imageView.image = UIImage(named: "placeholder1")
         }
         
+        if(isBookmark) {
+            print("is bookmark? \(isBookmark)")
+           titleLabel.text = bookmarkObject?.title
+           descTextView.text = bookmarkObject?.desc
+           bookmarkButton.titleLabel?.text = "Remove Bookmark"
+        }
+        
         tagLabel.text = dataType
         // Do any additional setup after loading the view.
     }
     
     func makeUI() {
-        //self.navigationController?.navigationBar.topItem?.backBarButtonItem?.
-        //navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
-       // navigationItem.backBarButtonItem?.setBackgroundImage(UIImage(named: "HomeButtonBg"), for: .normal, barMetrics: .default)
-        //self.navigationItem.backBarButtonItem?.setBackButtonBackgroundImage(UIImage(named: "HomeButtonBg"), for: .normal, barMetrics: .default)
-        
+        bookmarkButton.setTitle("Remove Bookmark", for: .normal)
     }
     
     public func shapeImage(desiredImage: UIView) {
@@ -62,6 +70,34 @@ class DetailsViewController: UIViewController {
 
     
 
+    @IBAction func bookmarkButton(_ sender: Any) {
+        if(isBookmark) {
+            
+            let alert = UIAlertController(title: "Careful", message: "Bookmark will be removed.", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+                print("canceled")
+                self.makeUI()
+                 }))
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                
+                  CoreDataManager.shared.deleteBookmark(bookmarks: self.bookmarkObject!)
+                  
+                 }))
+            
+            self.present(alert, animated: true, completion: nil)
+
+        } else {
+            let bookmarkData = DetailsViewModel(title: titleLabel.text ?? "", desc: descTextView.text, type: dataType)
+            bookmarkData.addBookmark()
+            //self.bookmarkButton.titleLabel?.text = "Remove Bookmark"
+            makeUI()
+        }
+
+        
+        
+    }
     /*
     // MARK: - Navigation
 

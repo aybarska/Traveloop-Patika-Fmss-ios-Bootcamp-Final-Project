@@ -55,7 +55,9 @@ class DetailsViewController: UIViewController {
     }
     
     func makeUI() {
-        bookmarkButton.setTitle("Remove Bookmark", for: .normal)
+        bookmarkButton.setTitle("Bookmark Added", for: .normal)
+        isBookmark = true
+        bookmarkButton.isEnabled = false
     }
     
     public func shapeImage(desiredImage: UIView) {
@@ -77,13 +79,14 @@ class DetailsViewController: UIViewController {
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
                 print("canceled")
-                self.makeUI()
+                //self.makeUI()
+                self.bookmarkButton.setTitle("Remove Bookmark", for: .normal)
                  }))
             
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
                 
                   CoreDataManager.shared.deleteBookmark(bookmarks: self.bookmarkObject!)
-                  
+                  self.navigationController?.popViewController(animated: true)
                  }))
             
             self.present(alert, animated: true, completion: nil)

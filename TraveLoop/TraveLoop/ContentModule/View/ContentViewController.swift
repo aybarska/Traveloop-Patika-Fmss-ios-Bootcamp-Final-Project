@@ -31,7 +31,7 @@ private extension ContentViewController {
         tableView.delegate = self
         tableView.dataSource = self
         registerCell()
-//        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Source Sans Pro", size: 30)!], for: .normal)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)], for: .normal)
         tableView.rowHeight = 230.0
     }
     
